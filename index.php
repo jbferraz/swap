@@ -13,12 +13,12 @@ and open the template in the editor.
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
             <?php include 'menu.php'; ?>            
             <div class="mdl-layout__drawer">
-                <span class="mdl-layout-title">SWAP</span>
+                <span class="mdl-layout-title"><b>SWAP</b></span>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="">Dasboard</a>
-                    <a class="mdl-navigation__link" href="">Cronogramas</a>
-                    <a class="mdl-navigation__link" href="">Parâmetros</a>
-                    <a class="mdl-navigation__link" href="">Cadastros</a>
+                    <a class="mdl-navigation__link" href=""><b>Dashboard</b></a>
+                    <a class="mdl-navigation__link" href=""><b>Cronogramas</b></a>
+                    <a class="mdl-navigation__link" href=""><b>Parâmetros</b></a>
+                    <a class="mdl-navigation__link" href=""><b>Cadastros</b></a>
                 </nav>
             </div>
             

@@ -8,10 +8,10 @@
             <h5>&nbsp;&nbsp;&nbsp;&nbsp; SWAP - Sistema Web de Apoio Pedagógico</h5>
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-            <a href="#overview" class="mdl-layout__tab is-active">Dasboard</a>
-            <a href="#features" class="mdl-layout__tab">Cronogramas</a>
-            <a href="#features" class="mdl-layout__tab">Parâmetros</a>
-            <a href="#features" class="mdl-layout__tab">Cadastros</a>
+            <a href="#overview" class="mdl-layout__tab is-active"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dashboard</b></a>
+            <a href="#features" class="mdl-layout__tab"><b>Cronogramas</b></a>
+            <a href="#features" class="mdl-layout__tab"><b>Parâmetros</b></a>
+            <a href="#features" class="mdl-layout__tab"><b>Cadastros</b></a>
         </div>
     </header>
     
