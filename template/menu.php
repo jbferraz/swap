@@ -11,8 +11,24 @@
         <a href="#overview" class="mdl-layout__tab is-active"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dashboard</b></a>
         <a href="#features" class="mdl-layout__tab"><b>Cronogramas</b></a>
         <a href="#features" class="mdl-layout__tab"><b>Parâmetros</b></a>
-        <a href="#features" class="mdl-layout__tab"><b>Cadastros</b></a>
-        <a href="view/turnoCadastro.php" class="mdl-layout__tab"><b>Turno</b></a>
+        <a id="subCadastros" href="#" class="mdl-layout__tab"><b>Cadastros</b></a>
+
+        <!-- sub menu only visible when clicked on the link above -->
+        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+            for="subCadastros">
+            <li class="mdl-menu__item">
+                <a href="view/turnoCadastro.php" class="mdl-menu__item">Turno</a>
+            </li>
+            <li disabled class="mdl-menu__item">
+                <a href="#" class="mdl-menu__item">SubMenu</a>
+            </li>
+            <li disabled class="mdl-menu__item">
+                <a href="#" class="mdl-menu__item">SubMenu</a>
+            </li>
+            <li disabled class="mdl-menu__item">
+                <a href="#" class="mdl-menu__item">SubMenu</a>
+            </li>
+        </ul>
     </div>
 </header>
 <div class="mdl-layout__drawer">

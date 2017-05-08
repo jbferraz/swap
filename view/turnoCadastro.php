@@ -5,17 +5,17 @@
 <link rel="stylesheet" href="../js/material.min.css">
 <script src="../js/material.min.js"></script>
 
-<!-- Add to homescreen for Chrome on Android -->
+ <!--Add to homescreen for Chrome on Android--> 
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="icon" sizes="192x192" href="../images/android-desktop.png">
 
-<!-- Add to homescreen for Safari on iOS -->
+ <!--Add to homescreen for Safari on iOS--> 
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="Material Design Lite">
 <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
 
-<!-- Tile icon for Win8 (144x144 + tile color) -->
+ <!--Tile icon for Win8 (144x144 + tile color)--> 
 <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
 <meta name="msapplication-TileColor" content="#3372DF">
 
@@ -52,25 +52,24 @@
 
 </style>
 
+<html lang="pt-br">
+    <head>
+        <title>SWAP</title>
+        <?php include '../template/head.php'; ?>
+    </head>
+    <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <?php include '../template/menu.php'; ?>        
 
-<!--<div class="container">
-    <div class="col-sm-4">
-        <form name="Cadastro de Turno" action="../action/turnoInsert.php" method="POST" enctype="multipart/form-data">
-            <input type="text" name="turno" id="nome" placeholder="Turno" /><br/>
-            </br>
-            <input type="submit" name="acao" value="Salvar" class="btn btn-success"/>
-        </form>
-    </div>
-</div>-->
-<!-- Textfield with Floating Label -->
-
-<form name="Cadastro de Turno" action="../action/turnoInsert.php" method="POST" enctype="multipart/form-data">
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" name="turno" id="nome">
-        <label class="mdl-textfield__label" for="turno">Turno</label>
-    </div>
-    </br>
-    <input type="submit" name="acao" value="Salvar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>
-</form>
-
+            <form name="Cadastro de Turno" action="../action/turnoInsert.php" method="POST" enctype="multipart/form-data">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" name="turno" id="nome">
+                    <label class="mdl-textfield__label" for="turno">Turno</label>
+                </div>
+                </br>
+                <input type="submit" name="acao" value="Salvar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>
+            </form>
+        </div>
+    </body>
+</html>
 
