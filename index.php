@@ -7,21 +7,11 @@ and open the template in the editor.
 <html lang="pt-br">
     <head>
         <title>SWAP</title>
-        <?php include 'head.php'; ?>
+        <?php include './template/head.php'; ?>
     </head>
     <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-            <?php include 'menu.php'; ?>            
-            <div class="mdl-layout__drawer">
-                <span class="mdl-layout-title"><b>SWAP</b></span>
-                <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href=""><b>Dashboard</b></a>
-                    <a class="mdl-navigation__link" href=""><b>Cronogramas</b></a>
-                    <a class="mdl-navigation__link" href=""><b>Parâmetros</b></a>
-                    <a class="mdl-navigation__link" href=""><b>Cadastros</b></a>
-                </nav>
-            </div>
-            
+            <?php include './template/menu.php'; ?>            
             <main class="mdl-layout__content">
                 <div class="mdl-layout__tab-panel is-active" id="overview">
                     <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
@@ -105,25 +95,24 @@ and open the template in the editor.
                         </ul>
                     </section>
                     <section >
-<!--                    MANTER ESTE CONTEÚDO COMENTADO, SE NÃO AVACALHA BTN3
-                        <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                            <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
-                        </div>
-                        <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                            <h5>Lorem ipsum dolor sit amet</h5>
-                            Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
-                        </div>
-                        <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                            <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
-                        </div>
-                        <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                            <h5>Lorem ipsum dolor sit amet</h5>
-                            Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
-                        </div>-->
+                        <!--                    MANTER ESTE CONTEÚDO COMENTADO, SE NÃO AVACALHA BTN3
+                                                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                                                    <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
+                                                </div>
+                                                <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                                                    <h5>Lorem ipsum dolor sit amet</h5>
+                                                    Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
+                                                </div>
+                                                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                                                    <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
+                                                </div>
+                                                <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                                                    <h5>Lorem ipsum dolor sit amet</h5>
+                                                    Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
+                                                </div>-->
                     </section>
                 </div>
-
-                <?php include 'footer.php'; ?>
+                <?php include './template/footer.php'; ?>
             </main>
         </div>
     </body>
