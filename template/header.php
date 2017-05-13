@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="../swap/js/estilo.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-orange.min.css">
+        <link rel="shortcut icon" href="../imagens/favicon.png">
 
     </head>
     <body>
@@ -43,4 +44,4 @@
             </main>
         </div>
 
-        <script src="../swap/js/material.min.js"></script>
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
