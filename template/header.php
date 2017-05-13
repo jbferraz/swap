@@ -25,6 +25,7 @@
                         <a class="mdl-navigation__link" href="">Cronogramas</a>
                         <a class="mdl-navigation__link" href="">Parâmetros</a>
                         <a class="mdl-navigation__link" href="">Cadastros</a>
+                        <a class="mdl-navigation__link" href="../view/turnoCadastro.php">Turno</a>
                     </nav>
                 </div>
             </header>
@@ -35,6 +36,7 @@
                     <a class="mdl-navigation__link" href="">Cronogramas</a>
                     <a class="mdl-navigation__link" href="">Parâmetros</a>
                     <a class="mdl-navigation__link" href="">Cadastros</a>
+                    <a class="mdl-navigation__link" href="../view/turnoCadastro.php">Turno</a>
                 </nav>
             </div>
             <main class="mdl-layout__content">
