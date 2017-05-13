@@ -20,23 +20,19 @@ define('BASE_URL', 'http://swap-edu-br.umbler.net');
         <link href="<?php echo BASE_URL; ?>/js/material.min.css" rel="stylesheet">
         <link href="<?php echo BASE_URL; ?>/js/material.css" rel="stylesheet">
     </head>
-    <body>
+    <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-            <header class="mdl-layout__header">
-                <div class="mdl-layout__header-row">
-                    <!-- Title -->
-                    <span class="mdl-layout-title">SWAP - Sistema Web de Apoio Pedagógico</span>
-                    <!-- Add spacer, to align navigation to the right -->
-                    <div class="mdl-layout-spacer"></div>
-                    <!-- Navigation -->
-                    <nav class="mdl-navigation">
-                        <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/index.php">Pagina Inicial</a>
-                        <a class="mdl-navigation__link" href="">Dashboard</a>
-                        <a class="mdl-navigation__link" href="">Cronogramas</a>
-                        <a class="mdl-navigation__link" href="">Parâmetros</a>
-                        <a class="mdl-navigation__link" href="">Cadastros</a>
-                        <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/turnoCadastro.php">Turno</a>
-                    </nav>
+            <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+                <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;SWAP - Sistema Web de Apoio Pedagógico</h5>
+                </div>
+                <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+                    <a href="<?php echo BASE_URL; ?>/index.php" class="mdl-layout__tab is-active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Página Inicial</a>
+                    <a href="#features" class="mdl-layout__tab">Dashboard</a>
+                    <a href="#features" class="mdl-layout__tab">Cronogramas</a>
+                    <a href="#features" class="mdl-layout__tab">Parâmetros</a>
+                    <a href="#features" class="mdl-layout__tab">Cadastros</a>
+                    <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/turnoCadastro.php">Turno</a>
                 </div>
             </header>
             <div class="mdl-layout__drawer">
