@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>SWAP - Sistema Web de Apoio Pedagógico</title>
-        <link rel="stylesheet" href="../swap/js/material.css">
-        <link rel="stylesheet" href="../swap/js/estilo.css">
+        <link rel="stylesheet" href="../js/material.css">
+        <link rel="stylesheet" href="../js/estilo.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-orange.min.css">
         <link rel="shortcut icon" href="../imagens/favicon.png">
