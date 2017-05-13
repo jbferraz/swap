@@ -1,119 +1,23 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html lang="pt-br">
-    <head>
-        <title>SWAP</title>
-        <?php include './template/head.php'; ?>
-    </head>
-    <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-            <?php include './template/menu.php'; ?>            
-            <main class="mdl-layout__content">
-                <div class="mdl-layout__tab-panel is-active" id="overview">
-                    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-                        <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
-                            <i class="material-icons">play_circle_filled</i>
-                        </header>
-                        <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-                            <div class="mdl-card__supporting-text">
-                                <h4>Features</h4>
-                                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
-                            </div>
-                            <div class="mdl-card__actions">
-                                <a href="#" class="mdl-button">Read our features</a>
-                            </div>
-                        </div>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
-                            <i class="material-icons">more_vert</i>
-                        </button>
-                        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-                            <li class="mdl-menu__item">Lorem</li>
-                            <li class="mdl-menu__item" disabled>Ipsum</li>
-                            <li class="mdl-menu__item">Dolor</li>
-                        </ul>
-                    </section>
-                    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-                        <div class="mdl-card mdl-cell mdl-cell--12-col">
-                            <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-                                <h4 class="mdl-cell mdl-cell--12-col">Details</h4>
-                                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                                    <div class="section__circle-container__circle mdl-color--primary"></div>
-                                </div>
-                                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                                    <h5>Lorem ipsum dolor sit amet</h5>
-                                    Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
-                                </div>
-                                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                                    <div class="section__circle-container__circle mdl-color--primary"></div>
-                                </div>
-                                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                                    <h5>Lorem ipsum dolor sit amet</h5>
-                                    Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
-                                </div>
-                                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                                    <div class="section__circle-container__circle mdl-color--primary"></div>
-                                </div>
-                                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                                    <h5>Lorem ipsum dolor sit amet</h5>
-                                    Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">proident minim</a>.
-                                </div>
-                            </div>
-                            <div class="mdl-card__actions">
-                                <a href="#" class="mdl-button">Read our features</a>
-                            </div>
-                        </div>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
-                            <i class="material-icons">more_vert</i>
-                        </button>
-                        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
-                            <li class="mdl-menu__item">Lorem</li>
-                            <li class="mdl-menu__item" disabled>Ipsum</li>
-                            <li class="mdl-menu__item">Dolor</li>
-                        </ul>
-                    </section>
-                    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-                        <div class="mdl-card mdl-cell mdl-cell--12-col">
-                            <div class="mdl-card__supporting-text">
-                                <h4>Technology</h4>
-                                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.
-                            </div>
-                            <div class="mdl-card__actions">
-                                <a href="#" class="mdl-button">Read our features</a>
-                            </div>
-                        </div>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
-                            <i class="material-icons">more_vert</i>
-                        </button>
-                        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
-                            <li class="mdl-menu__item">Lorem</li>
-                            <li class="mdl-menu__item" disabled>Ipsum</li>
-                            <li class="mdl-menu__item">Dolor</li>
-                        </ul>
-                    </section>
-                    <section >
-                        <!--                    MANTER ESTE CONTEÚDO COMENTADO, SE NÃO AVACALHA BTN3
-                                                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                                                    <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
-                                                </div>
-                                                <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                                                    <h5>Lorem ipsum dolor sit amet</h5>
-                                                    Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
-                                                </div>
-                                                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                                                    <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
-                                                </div>
-                                                <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                                                    <h5>Lorem ipsum dolor sit amet</h5>
-                                                    Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
-                                                </div>-->
-                    </section>
-                </div>
-                <?php include './template/footer.php'; ?>
-            </main>
-        </div>
-    </body>
-</html>
+<?php
+include "./template/header.php";
+?>
+
+<main class="mdl-layout__content">
+    <div class="page-content">
+
+        Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada. Sed vel lectus. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem. Phasellus rhoncus. Aenean id metus id velit ullamcorper pulvinar. Vestibulum fermentum tortor id mi. Pellentesque ipsum. Nulla non arcu lacinia neque faucibus fringilla. Nulla non lectus sed nisl molestie malesuada. Proin in tellus sit amet nibh dignissim sagittis. Vivamus luctus egestas leo. Maecenas sollicitudin. Nullam rhoncus aliquam metus. Etiam egestas wisi a erat. Praesent in mauris eu tortor porttitor accumsan. Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Aenean fermentum risus id tortor. Integer imperdiet lectus quis justo. Integer tempor. Vivamus ac urna vel leo pretium faucibus. Mauris elementum mauris vitae tortor. In dapibus augue non sapien. Aliquam ante. Curabitur bibendum justo non orci.
+
+        Etiam posuere quam ac quam. Maecenas aliquet accumsan leo. Nullam dapibus fermentum ipsum. Etiam quis quam. Integer lacinia. Nulla est. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis. Integer vulputate sem a nibh rutrum consequat. Maecenas lorem. Pellentesque pretium lectus id turpis. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Fusce wisi. Phasellus faucibus molestie nisl. Fusce eget urna. Curabitur vitae diam non enim vestibulum interdum. Nulla quis diam. Ut tempus purus at lorem.
+
+        Maecenas ipsum velit, consectetuer eu, lobortis ut, dictum at, dui. In rutrum. Sed ac dolor sit amet purus malesuada congue. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Suspendisse sagittis ultrices augue. Mauris metus. Nunc dapibus tortor vel mi dapibus sollicitudin. Etiam posuere lacus quis dolor. Praesent id justo in neque elementum ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. In convallis. Fusce suscipit libero eget elit. Praesent vitae arcu tempor neque lacinia pretium. Morbi imperdiet, mauris ac auctor dictum, nisl ligula egestas nulla, et sollicitudin sem purus in lacus.
+
+        Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc. Duis viverra diam non justo. In nisl. Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. Nunc posuere. Nullam lectus justo, vulputate eget, mollis sed, tempor sed, magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam neque. Curabitur ligula sapien, pulvinar a, vestibulum quis, facilisis vel, sapien. Nullam eget nisl. Donec vitae arcu.
+
+        Aenean placerat. In vulputate urna eu arcu. Aliquam erat volutpat. Suspendisse potenti. Morbi mattis felis at nunc. Duis viverra diam non justo. In nisl. Nullam sit amet magna in magna gravida vehicula. Mauris tincidunt sem sed arcu. Nunc posuere. Nullam lectus justo, vulputate eget, mollis sed, tempor sed, magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam neque. Curabitur ligula sapien, pulvinar a, vestibulum quis, facilisis vel, sapien. Nullam eget nisl. Donec vitae arcu.
+
+        Praesent in mauris eu tortor porttitor accumsan. Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis
+    </div>
+
+</main>
+
+<?php include "./template/footer.php" ?>
