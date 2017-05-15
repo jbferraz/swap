@@ -34,33 +34,8 @@ define('BASE_URL', 'http://localhost/swap');
                     <a href="#features" class="mdl-layout__tab">Parâmetros</a>
                     <a href="#features" class="mdl-layout__tab">Cadastros</a>
                     <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/turnoCadastro.php">Turno</a>
-
-                    <!-- Right aligned menu below button -->
-                    <button id="demo-menu-lower-right"
-                            class="mdl-button mdl-js-button mdl-button--icon">
-                        <i class="material-icons">more_vert</i>
-                    </button>
-
-                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                        for="demo-menu-lower-right">
-                        <li class="mdl-menu__item " id="teste">Some Action
-                            <button id="demo-menu-lower-right1"
-                                    class="  mdl-button mdl-js-button mdl-button--icon">
-                                <i class="material-icons">more_vert</i>
-                            </button>
-                        </li>
-                        <li class="mdl-menu__item">Another Action</li>
-                        <li disabled class="mdl-menu__item">Disabled Action</li>
-                        <li class="mdl-menu__item">Yet Another Action</li>
-                    </ul>
-                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                        for="demo-menu-lower-right1">
-                        <li class="mdl-menu__item">Teste1</li>
-                        <li class="mdl-menu__item">Teste1</li>
-                        <li disabled class="mdl-menu__item">Teste1</li>
-                        <li class="mdl-menu__item">Teste1</li>
-                    </ul>
-
+                    <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/paisCadastro.php">Pais</a>
+                    <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/estadoCadastro.php">Estado</a>
                 </div>
             </header>
             <div class="mdl-layout__drawer">
@@ -71,6 +46,8 @@ define('BASE_URL', 'http://localhost/swap');
                     <a class="mdl-navigation__link" href="">Parâmetros</a>
                     <a class="mdl-navigation__link" href="">Cadastros</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/turnoCadastro.php">Turno</a>
+                    <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/paisCadastro.php">Pais</a>
+                    <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/estadoCadastro.php">Estado</a>
                 </nav>
             </div>
             <main class="mdl-layout__content ">
