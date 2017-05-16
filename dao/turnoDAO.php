@@ -60,8 +60,9 @@ class turnoDAO extends database{
         }
         $fields_T = substr($fields_T, 2);
         $sql = "UPDATE turno SET $fields_T";
-        if (isset($where))
+        if (isset($where)) {
             $sql .= " WHERE $where";
+        }
         $t = $this->updateDB($sql, $params);
         return $t;
     }

@@ -25,5 +25,5 @@ $pais_IdPais = strtoupper(utf8_decode($_POST['pais_IdPais']));
 
 $fields = "nomeEstado,nomeEstadoCurto,pais_IdPais";
 $params = array("$nomeEstado","$nomeEstadoCurto","$pais_IdPais");
-$rs = $paisDAO->insert($fields,$params);
+$rs = $estadoDAO->insert($fields,$params);
 var_dump($rs);

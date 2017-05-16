@@ -27,19 +27,17 @@ class pais {
     }
     
     //put your code here
-    private $idPais;
+    private $idpais;
     private $nomePais;
     private $nomePaisCurto;
     
     /*Metodos get e set que trazem o conteudo da variável privada desejada*/
-    function __construct($idPais, $nomePais, $nomePaisCurto) {
-        $this->idPais = $idPais;
-        $this->nomePais = $nomePais;
-        $this->nomePaisCurto = $nomePaisCurto;
+    function __construct() {
+        
     }
-
+    
     function getIdPais() {
-        return $this->idPais;
+        return $this->idpais;
     }
 
     function getNomePais() {

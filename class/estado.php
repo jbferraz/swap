@@ -34,22 +34,22 @@ class estado {
     
     /*Metodos get e set que trazem o conteudo da variável privada desejada*/
     function __construct($idEstado, $nomeEstado, $nomeEstadoCurto,$pais_idPais) {
-        $this->idPais = $idEstado;
-        $this->nomePais = $nomeEstado;
-        $this->nomePaisCurto = $nomeEstadoCurto;
+        $this->idEstado = $idEstado;
+        $this->nomeEstado = $nomeEstado;
+        $this->nomeEstadoCurto = $nomeEstadoCurto;
         $this->pais_idPais = $pais_idPais;
     }
 
     function getIdEstado() {
-        return $this->idPais;
+        return $this->idEstado;
     }
 
     function getNomeEstado() {
-        return $this->nomePais;
+        return $this->nomeEstado;
     }
     
     function getNomeEstadoCurto() {
-        return $this->nomePaisCurto;
+        return $this->nomeEstadoCurto;
     }
     
     function getPais_IdPais() {

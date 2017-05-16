@@ -41,7 +41,7 @@ class estadoDAO extends database{
         $sql = "SELECT $fields FROM estado$add";
         return $this->selectDB($sql, null, 'estado');
     }
-
+    
     public function insert($fields, $params = null) {
         $numparams = "";
         for ($i = 0; $i < count($params); $i++) {
@@ -60,8 +60,9 @@ class estadoDAO extends database{
         }
         $fields_T = substr($fields_T, 2);
         $sql = "UPDATE estado SET $fields_T";
-        if (isset($where))
+        if (isset($where)) {
             $sql .= " WHERE $where";
+        }
         $t = $this->updateDB($sql, $params);
         return $t;
     }

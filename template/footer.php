@@ -1,3 +1,5 @@
+<script defer src="<?php echo BASE_URL; ?>/js/material.min.js"></script>
+
 <footer class="mdl-mini-footer">
     <div class="mdl-mini-footer__left-section">
         <div class="mdl-logo">SWAP</div>

@@ -1,7 +1,7 @@
 <?php
 session_start();
-define('BASE_URL', 'http://swap-edu-br.umbler.net');
-//define('BASE_URL', 'http://localhost/swap');
+//define('BASE_URL', 'http://swap-edu-br.umbler.net');
+define('BASE_URL', 'http://localhost/swap');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,14 +13,14 @@ define('BASE_URL', 'http://swap-edu-br.umbler.net');
         <link rel="stylesheet" href="<?php echo BASE_URL; ?>/js/estilo.css">
         <link rel="stylesheet" href="<?php echo BASE_URL; ?>/js/styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-orange.min.css" />
+        <link rel="stylesheet" href="<?php echo BASE_URL; ?>/js/material.indigo-orange.min.css" />
+        <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-orange.min.css" /> -->
         <link rel="shortcut icon" href="<?php echo BASE_URL; ?>/imagens/favicon.png">
 
         <link href="<?php echo BASE_URL; ?>/js/material.min.css" rel="stylesheet">
         <link href="<?php echo BASE_URL; ?>/js/material.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="<?php echo BASE_URL; ?>/js/font.css">
     </head>
     <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -46,12 +46,12 @@ define('BASE_URL', 'http://swap-edu-br.umbler.net');
                     <a class="mdl-navigation__link" href="">Parâmetros</a>
                     <a class="mdl-navigation__link" href="">Cadastros</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/turnoCadastro.php">Turno</a>
-                    <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/paisCadastro.php">Pais</a>
-                    <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/estadoCadastro.php">Estado</a>
+                    <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/paisCadastro.php">Pais</a>
+                    <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/estadoCadastro.php">Estado</a>
                 </nav>
             </div>
             <main class="mdl-layout__content ">
             </main>
         </div>
 
-        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        
