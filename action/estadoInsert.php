@@ -1,5 +1,3 @@
-
-
 <?php
 
 /*
@@ -13,7 +11,6 @@
  *
  * @author jairb
  */
-
 
 require_once("../includes/conexao.inc.php");
 include_once("../dao/estadoDAO.php");

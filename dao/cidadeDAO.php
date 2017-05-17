@@ -1,20 +1,20 @@
 <?php
 
-/*
+/* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
 /**
- * Description of estadoDAO
+ * Description of cidadeDAO
  *
  * @author jairb
  */
-include_once("../class/estado.php");
+include_once("../class/cidade.php");
 
-class estadoDAO extends database{
-
+class cidadeDAO extends database{
+    
     //put your code here
     public function __construct() {
         
@@ -38,17 +38,17 @@ class estadoDAO extends database{
         if (strlen($add) > 0) {
             $add = " " . $add;
         }
-        $sql = "SELECT $fields FROM estado$add";
-        return $this->selectDB($sql, null, 'estado');
+        $sql = "SELECT $fields FROM cidade$add";
+        return $this->selectDB($sql, null, 'cidade');
     }
-    
+
     public function insert($fields, $params = null) {
         $numparams = "";
         for ($i = 0; $i < count($params); $i++) {
             $numparams .= ",?";
         }
         $numparams = substr($numparams, 1);
-        $sql = "INSERT INTO estado ($fields) VALUES ($numparams)";
+        $sql = "INSERT INTO cidade ($fields) VALUES ($numparams)";
         $t = $this->insertDB($sql, $params);
         return $t;
     }
@@ -59,7 +59,7 @@ class estadoDAO extends database{
             $fields_T .= ", $fields[$i] = ?";
         }
         $fields_T = substr($fields_T, 2);
-        $sql = "UPDATE estado SET $fields_T";
+        $sql = "UPDATE cidade SET $fields_T";
         if (isset($where)) {
             $sql .= " WHERE $where";
         }
@@ -68,11 +68,12 @@ class estadoDAO extends database{
     }
 
     public function delete($where = null, $params = null) {
-        $sql = "DELETE FROM estado";
+        $sql = "DELETE FROM cidade";
         if (isset($where)) {
             $sql .= " WHERE $where";
         }
         $t = $this->deleteDB($sql, $params);
         return $t;
     }
+
 }

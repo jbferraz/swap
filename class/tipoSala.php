@@ -7,11 +7,11 @@
  */
 
 /**
- * Description of estado
+ * Description of tipoSala
  *
  * @author jairb
  */
-class estado {
+class tipoSala {
     /* Evita que a classe seja clonada */
     private function __clone() {
     }
@@ -27,30 +27,21 @@ class estado {
     }
     
     //put your code here
-    private $idestado;
-    private $nomeEstado;
-    private $nomeEstadoCurto;
-    private $pais_idPais;
+    private $idtipoSala;
+    private $descricaoTipoSala;
     
     /*Metodos get e set que trazem o conteudo da variável privada desejada*/
-    function __construct() {
-
+    function __construct($idtipoSala, $descricaoTipoSala) {
+        $this->idtipoSala = $idtipoSala;
+        $this->descricaoTipoSala = $descricaoTipoSala;
     }
 
-    function getIdEstado() {
-        return $this->idestado;
+    function getIdtipoSala() {
+        return $this->idtipoSala;
     }
 
-    function getNomeEstado() {
-        return $this->nomeEstado;
-    }
-    
-    function getNomeEstadoCurto() {
-        return $this->nomeEstadoCurto;
-    }
-    
-    function getPais_IdPais() {
-        return $this->pais_idPais;
+    function getDescricaoTipoSala() {
+        return $this->descricaoTipoSala;
     }
 
 }

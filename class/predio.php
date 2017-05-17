@@ -7,11 +7,11 @@
  */
 
 /**
- * Description of estado
+ * Description of predio
  *
  * @author jairb
  */
-class estado {
+class predio {
     /* Evita que a classe seja clonada */
     private function __clone() {
     }
@@ -27,30 +27,46 @@ class estado {
     }
     
     //put your code here
+    private $idpredio;
+    private $descricaoPredio;
+    private $endereco;
+    private $numEndereco;
     private $idestado;
-    private $nomeEstado;
-    private $nomeEstadoCurto;
-    private $pais_idPais;
+    private $idcidade;
+    private $numTelefone;
     
     /*Metodos get e set que trazem o conteudo da variável privada desejada*/
     function __construct() {
 
     }
+    
+    function getIdpredio() {
+        return $this->idpredio;
+    }
 
-    function getIdEstado() {
+    function getDescricaoPredio() {
+        return $this->descricaoPredio;
+    }
+
+    function getEndereco() {
+        return $this->endereco;
+    }
+
+    function getNumEndereco() {
+        return $this->numEndereco;
+    }
+
+    function getIdestado() {
         return $this->idestado;
     }
 
-    function getNomeEstado() {
-        return $this->nomeEstado;
+    function getIdcidade() {
+        return $this->idcidade;
     }
-    
-    function getNomeEstadoCurto() {
-        return $this->nomeEstadoCurto;
+
+    function getNumTelefone() {
+        return $this->numTelefone;
     }
-    
-    function getPais_IdPais() {
-        return $this->pais_idPais;
-    }
+
 
 }

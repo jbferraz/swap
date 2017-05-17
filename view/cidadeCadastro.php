@@ -17,35 +17,35 @@ include "../template/header.php";
             <div class="mdl-cell mdl-cell--4-col">
                 <div class="demo-card-wide mdl-card mdl-shadow--2dp ">
                     <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Cadastro de Estado</h2>
+                        <h2 class="mdl-card__title-text">Cadastro de Cidade</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        <form name="Cadastro de Estado" action="../action/estadoInsert.php" method="POST" enctype="multipart/form-data">
+                        <form name="Cadastro de Cidade" action="../action/cidadeInsert.php" method="POST" enctype="multipart/form-data">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" required="required" name="nomeEstado" id="nomeEstado">
-                                <label class="mdl-textfield__label" for="nomeEstado">Nome Estado</label>
+                                <input class="mdl-textfield__input" type="text" required="required" name="nomeCidade" id="nomeCidade">
+                                <label class="mdl-textfield__label" for="nomeCidade">Nome Cidade</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" required="required" name="nomeEstadoCurto" id="nomeEstadoCurto">
-                                <label class="mdl-textfield__label" for="nomeEstadoCurto">Nome Estado Curto</label>
+                                <input class="mdl-textfield__input" type="text" required="required" name="nomeCidadeCurto" id="nomeCidadeCurto">
+                                <label class="mdl-textfield__label" for="nomeCidadeCurto">Nome Cidade Curto</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <select class="mdl-textfield__input" aria-label="ngSelected demo" required="required" name="pais_IdPais" id="pais_IdPais">
+                                <select class="mdl-textfield__input" aria-label="ngSelected demo" required="required" name="estado_idestado" id="estado_idestado">
                                     <option value=""></option>
                                     <?php
                                     require_once ("../includes/conexao.inc.php");
-                                    include_once ("../dao/paisDAO.php");
+                                    include_once ("../dao/estadoDAO.php");
 
-                                    $paisDAO = new paisDAO();
-                                    $arr = $paisDAO->load();
+                                    $estadoDAO = new estadoDAO();
+                                    $arr = $estadoDAO->load();
 
                                     foreach ($arr as $value => $row) {
-                                        echo "<option id='" . pais_IdPais . "' value=" . $row->getIdPais() . ">" . $row->getNomePais() . "</option>";
+                                        echo "<option id='" . estado_idestado . "' value=" . $row->getIdEstado() . ">" . $row->getNomeEstado() . "</option>";
                                     }
                                     ?>
                                     <!--<option ID="pais_IdPais" value="1">ARGENTINA</option>--> 
                                 </select>
-                                <label class="mdl-textfield__label" for="pais_IdPais">Pais</label><br/>
+                                <label class="mdl-textfield__label" for="estado_idestado">Estado</label><br/>
                             </div>
                             </br>
                             <input type="submit" name="acao" value="Salvar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>

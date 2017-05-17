@@ -7,7 +7,7 @@
  */
 
 /**
- * Description of estado
+ * Description of cidade
  *
  * @author jairb
  */
@@ -27,30 +27,30 @@ class estado {
     }
     
     //put your code here
-    private $idestado;
-    private $nomeEstado;
-    private $nomeEstadoCurto;
-    private $pais_idPais;
+    private $idcidade;
+    private $nomeCidade;
+    private $nomeCidadeCurto;
+    private $estado_idestado;
     
     /*Metodos get e set que trazem o conteudo da variável privada desejada*/
     function __construct() {
 
     }
 
-    function getIdEstado() {
-        return $this->idestado;
+    function getIdcidade() {
+        return $this->idcidade;
     }
 
-    function getNomeEstado() {
-        return $this->nomeEstado;
+    function getNomeCidade() {
+        return $this->nomeCidade;
     }
-    
-    function getNomeEstadoCurto() {
-        return $this->nomeEstadoCurto;
+
+    function getNomeCidadeCurto() {
+        return $this->nomeCidadeCurto;
     }
-    
-    function getPais_IdPais() {
-        return $this->pais_idPais;
+
+    function getEstado_idestado() {
+        return $this->estado_idestado;
     }
 
 }

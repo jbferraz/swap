@@ -36,6 +36,9 @@ define('BASE_URL', 'http://swap-edu-br.umbler.net');
                     <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/turnoCadastro.php">Turno</a>
                     <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/paisCadastro.php">Pais</a>
                     <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/estadoCadastro.php">Estado</a>
+                    <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/cidadeCadastro.php">Cidade</a>
+                    <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/predioCadastro.php">Prédio</a>
+                    <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/tipoSalaCadastro.php">Tipo Sala</a>
                 </div>
             </header>
             <div class="mdl-layout__drawer">
@@ -48,6 +51,9 @@ define('BASE_URL', 'http://swap-edu-br.umbler.net');
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/turnoCadastro.php">Turno</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/paisCadastro.php">Pais</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/estadoCadastro.php">Estado</a>
+                    <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/cidadeCadastro.php">Cidade</a>
+                    <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/predioCadastro.php">Prédio</a>
+                    <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/tipoSalaCadastro.php">Tipo Sala</a>
                 </nav>
             </div>
             <main class="mdl-layout__content ">

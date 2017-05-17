@@ -7,15 +7,15 @@
  */
 
 /**
- * Description of estadoDAO
+ * Description of predioDAO
  *
  * @author jairb
  */
-include_once("../class/estado.php");
+include_once("../class/predio.php");
 
-class estadoDAO extends database{
-
+class predioDAO extends database{
     //put your code here
+    
     public function __construct() {
         
     }
@@ -38,8 +38,8 @@ class estadoDAO extends database{
         if (strlen($add) > 0) {
             $add = " " . $add;
         }
-        $sql = "SELECT $fields FROM estado$add";
-        return $this->selectDB($sql, null, 'estado');
+        $sql = "SELECT $fields FROM predio$add";
+        return $this->selectDB($sql, null, 'predio');
     }
     
     public function insert($fields, $params = null) {
@@ -48,7 +48,7 @@ class estadoDAO extends database{
             $numparams .= ",?";
         }
         $numparams = substr($numparams, 1);
-        $sql = "INSERT INTO estado ($fields) VALUES ($numparams)";
+        $sql = "INSERT INTO predio ($fields) VALUES ($numparams)";
         $t = $this->insertDB($sql, $params);
         return $t;
     }
@@ -59,7 +59,7 @@ class estadoDAO extends database{
             $fields_T .= ", $fields[$i] = ?";
         }
         $fields_T = substr($fields_T, 2);
-        $sql = "UPDATE estado SET $fields_T";
+        $sql = "UPDATE predio SET $fields_T";
         if (isset($where)) {
             $sql .= " WHERE $where";
         }
@@ -68,7 +68,7 @@ class estadoDAO extends database{
     }
 
     public function delete($where = null, $params = null) {
-        $sql = "DELETE FROM estado";
+        $sql = "DELETE FROM predio";
         if (isset($where)) {
             $sql .= " WHERE $where";
         }
