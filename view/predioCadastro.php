@@ -74,7 +74,10 @@ include "../template/header.php";
                             </div>
                             </br>
                             <input type="submit" name="acao" value="Salvar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>
-                            <input type="reset">
+                            <input type="reset" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>
+                            <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="<?php echo BASE_URL; ?>/index.php" id="addTelefone">
+                                Cancelar
+                            </a>
                         </form>
                     </div>
                 </div>

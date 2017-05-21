@@ -1,5 +1,4 @@
 <?php
-
 include "../template/header.php";
 ?>
 
@@ -46,7 +45,7 @@ include "../template/header.php";
                                 <label class="mdl-textfield__label" for="curriculo">Currículo</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" name="foto" id="foto">
+                                <input class="mdl-textfield__input" type="image" name="foto" id="foto">
                                 <label class="mdl-textfield__label" for="foto">Foto</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -61,9 +60,20 @@ include "../template/header.php";
                                 <input class="mdl-checkbox__input" type="checkbox" name="PF" id="PF">
                                 <label class="mdl-checkbox__label" for="PF">Pessoa Física</label>
                             </div>
+                            <br>
+                            <a class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" href="javascript:void(0)" id="addTelefone">
+                                <i class="material-icons">add</i>
+                            </a>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="campoDinamico">
+
+                            </div>
+
                             </br>
                             <input type="submit" name="acao" value="Salvar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>
                             <input type="reset" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>
+                            <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="<?php echo BASE_URL; ?>/index.php" id="addTelefone">
+                                Cancelar
+                            </a>
                         </form>
                     </div>
                 </div>
@@ -72,3 +82,27 @@ include "../template/header.php";
     </div>
 </main>
 <?php include "../template/footer.php" ?>
+<script>
+    $(function () {
+        var scntDiv = $('#campoDinamico');
+        $(document).on('click', '#addTelefone', function () {
+            $('<p>' +
+                    '<input class="mdl-textfield__input" type="tel" name="numTelefone[]" id="numTelefone"/>' +
+                    '<label class="mdl-textfield__label" for="numTelefone">' +
+                    'Telefone' +
+                    '</label>' +
+                                       
+                    '<input class="mdl-checkbox__input" type="checkbox" name="numPrincipal[]" id="numPrincipal" />' +
+                    '<label class="mdl-checkbox__label" for="numPrincipal">Núm. Principal</label>'+
+                    '<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="javascript:void(0)" id="remSelect">' +
+                    ' Remover Telefone' +
+                    ' </a>  ' +
+                    '</p>').appendTo(scntDiv);
+            return false;
+        });
+        $(document).on('click', '#remSelect', function () {
+            $(this).parents('p').remove();
+            return false;
+        });
+    });
+</script>

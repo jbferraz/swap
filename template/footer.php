@@ -1,4 +1,5 @@
 <script defer src="<?php echo BASE_URL; ?>/js/material.min.js"></script>
+<script defer src="<?php echo BASE_URL; ?>/js/material.js"></script>
 
 <footer class="mdl-mini-footer">
     <div class="mdl-mini-footer__left-section">

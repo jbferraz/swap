@@ -1,12 +1,12 @@
 <?php
 session_start();
-//define('BASE_URL', 'http://swap-edu-br.umbler.net');
-define('BASE_URL', 'http://localhost/swap');
+define('BASE_URL', 'http://swap-edu-br.umbler.net');
+//define('BASE_URL', 'http://localhost/swap');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>SWAP - Sistema Web de Apoio Pedagógico</title>
@@ -28,7 +28,7 @@ define('BASE_URL', 'http://localhost/swap');
                 <div class="mdl-layout--large-screen-only mdl-layout__header-row">
                     <h5>&nbsp;&nbsp;&nbsp;&nbsp;SWAP - Sistema Web de Apoio Pedagógico</h5>
                 </div>     
-                <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+<!--                <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
                     <a href="<?php echo BASE_URL; ?>/index.php" class="mdl-layout__tab is-active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Página Inicial</a>
                     <a href="#features" class="mdl-layout__tab">Cronogramas</a>
                     <a href="#features" class="mdl-layout__tab">Parâmetros</a>
@@ -42,7 +42,7 @@ define('BASE_URL', 'http://localhost/swap');
                     <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/tipoSalaCadastro.php">Tipo Sala</a>
                     <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/salaCadastro.php">Sala</a>
                     <a class="mdl-layout__tab" href="<?php echo BASE_URL; ?>/view/professorCadastro.php">Professor</a>
-                </div>
+                </div>-->
             </header>
             <div class="mdl-layout__drawer">
                 <span class="mdl-layout-title">SWAP</span>
@@ -52,6 +52,7 @@ define('BASE_URL', 'http://localhost/swap');
                     <a class="mdl-navigation__link" href="">Parâmetros</a>
                     <a class="mdl-navigation__link" href="">Cadastros</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/turnoCadastro.php">Turno</a>
+                    <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/turnoListar.php">Lista Turno</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/paisCadastro.php">Pais</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/estadoCadastro.php">Estado</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/cidadeCadastro.php">Cidade</a>

@@ -7,11 +7,11 @@
  */
 
 /**
- * Description of turno
+ * Description of telefoneProfessor
  *
  * @author jairb
  */
-class turno {
+class telefoneProfessor {
     /* Evita que a classe seja clonada */
     private function __clone() {
     }
@@ -27,20 +27,31 @@ class turno {
     }
     
     //put your code here
-    private $idTurno;
-    private $turno;
+    private $idtelefone;
+    private $numTelefone;
+    private $idprofessor;
+    private $numPrincipal;
+
     
     /*Metodos get e set que trazem o conteudo da variável privada desejada*/
     function __construct() {
 
     }
-
-    function getIdTurno() {
-        return $this->idTurno;
+    
+    function getIdtelefone() {
+        return $this->idtelefone;
     }
 
-    function getTurno() {
-        return $this->turno;
+    function getNumTelefone() {
+        return $this->numTelefone;
+    }
+
+    function getIdprofessor() {
+        return $this->idprofessor;
+    }
+
+    function getNumPrincipal() {
+        return $this->numPrincipal;
     }
 
 }
