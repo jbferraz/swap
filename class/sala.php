@@ -7,11 +7,11 @@
  */
 
 /**
- * Description of tipoSala
+ * Description of sala
  *
  * @author jairb
  */
-class tipoSala {
+class sala {
     /* Evita que a classe seja clonada */
     private function __clone() {
     }
@@ -27,20 +27,40 @@ class tipoSala {
     }
     
     //put your code here
+    private $idsalaAndar;
+    private $numSalaAndar;
+    private $descricaoSala;
+    private $capacidadeAlunoSala;
     private $idtipoSala;
-    private $descricaoTipoSala;
+    private $idandarPredio;
     
     /*Metodos get e set que trazem o conteudo da variável privada desejada*/
     function __construct() {
 
+    }
+    
+    function getIdsalaAndar() {
+        return $this->idsalaAndar;
+    }
+
+    function getNumSalaAndar() {
+        return $this->numSalaAndar;
+    }
+
+    function getDescricaoSala() {
+        return $this->descricaoSala;
+    }
+
+    function getCapacidadeAlunoSala() {
+        return $this->capacidadeAlunoSala;
     }
 
     function getIdtipoSala() {
         return $this->idtipoSala;
     }
 
-    function getDescricaoTipoSala() {
-        return $this->descricaoTipoSala;
+    function getIdandarPredio() {
+        return $this->idandarPredio;
     }
 
 }

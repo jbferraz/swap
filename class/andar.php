@@ -7,11 +7,11 @@
  */
 
 /**
- * Description of tipoSala
+ * Description of andar
  *
  * @author jairb
  */
-class tipoSala {
+class andar {
     /* Evita que a classe seja clonada */
     private function __clone() {
     }
@@ -27,20 +27,26 @@ class tipoSala {
     }
     
     //put your code here
-    private $idtipoSala;
-    private $descricaoTipoSala;
+    private $idandarPredio;
+    private $numAndarPredio;
+    private $predio_idpredio;
     
     /*Metodos get e set que trazem o conteudo da variável privada desejada*/
     function __construct() {
-
+        
+    }
+    
+    function getIdandarPredio() {
+        return $this->idandarPredio;
     }
 
-    function getIdtipoSala() {
-        return $this->idtipoSala;
+    function getNumAndarPredio() {
+        return $this->numAndarPredio;
     }
 
-    function getDescricaoTipoSala() {
-        return $this->descricaoTipoSala;
+    function getPredio_idpredio() {
+        return $this->predio_idpredio;
     }
+
 
 }

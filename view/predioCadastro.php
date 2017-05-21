@@ -20,7 +20,7 @@ include "../template/header.php";
                         <h2 class="mdl-card__title-text">Cadastro de Prédio</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        <form name="Cadastro de Predio" action="../action/predioInsert.php" method="POST" enctype="multipart/form-data">
+                        <form name="Cadastro de Predio" action="<?php echo BASE_URL; ?>/action/predioInsert.php" method="POST" enctype="multipart/form-data">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                 <input class="mdl-textfield__input" type="text" required="required" name="descricaoPredio" id="descricaoPredio">
                                 <label class="mdl-textfield__label" for="descricaoPredio">Descrição Prédio</label>
@@ -68,12 +68,13 @@ include "../template/header.php";
                                 <label class="mdl-textfield__label" for="idestado">Estado</label><br/>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" required="required" pattern="-?[0-9]*(\.[0-9]+)?" name="numTelefone" id="numTelefone">
+                                <input class="mdl-textfield__input" type="tel" required="required" pattern="[0-9]*" name="numTelefone" id="numTelefone">
                                 <label class="mdl-textfield__label" for="numTelefone">Telefone</label>
                                 <span class="mdl-textfield__error">Esta valor não é um número!</span>
                             </div>
                             </br>
                             <input type="submit" name="acao" value="Salvar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>
+                            <input type="reset">
                         </form>
                     </div>
                 </div>
