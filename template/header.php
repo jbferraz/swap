@@ -1,7 +1,7 @@
 <?php
 session_start();
-define('BASE_URL', 'http://swap-edu-br.umbler.net');
-//define('BASE_URL', 'http://localhost/swap');
+//define('BASE_URL', 'http://swap-edu-br.umbler.net');
+define('BASE_URL', 'http://localhost/swap');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -61,6 +61,7 @@ define('BASE_URL', 'http://swap-edu-br.umbler.net');
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/tipoSalaCadastro.php">Tipo Sala</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/salaCadastro.php">Sala</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/professorCadastro.php">Professor</a>
+                    <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/cursoCadastro.php">Curso</a>
                 </nav>
             </div>
             <main class="mdl-layout__content ">
