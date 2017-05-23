@@ -1,7 +1,7 @@
 <?php
 session_start();
-//define('BASE_URL', 'http://swap-edu-br.umbler.net');
-define('BASE_URL', 'http://localhost/swap');
+define('BASE_URL', 'http://swap-edu-br.umbler.net');
+//define('BASE_URL', 'http://localhost/swap');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
