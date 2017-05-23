@@ -13,9 +13,9 @@ include "../template/header.php";
 
 <main class="mdl-layout__content">
     <div class="page-content ">
-        <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--4-col">
-                <div class="demo-card-wide mdl-card mdl-shadow--2dp ">
+        <div class="demo-container mdl-grid">
+            <div class="mdl-cell mdl-cell--5-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+            <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--7-col">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Cadastro de Andar</h2>
                     </div>
@@ -53,6 +53,5 @@ include "../template/header.php";
                 </div>
             </div>
         </div>
-    </div>
 </main>
 <?php include "../template/footer.php" ?>

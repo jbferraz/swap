@@ -7,11 +7,11 @@
  */
 
 /**
- * Description of turno
+ * Description of restricaoDataHorario
  *
  * @author jairb
  */
-class turno {
+class restricaoDataHorario {
     /* Evita que a classe seja clonada */
     private function __clone() {
     }
@@ -27,20 +27,31 @@ class turno {
     }
     
     //put your code here
+    private $idrestricaoDataHorario;
+    private $dataRestricao;
+    private $justificativaRestricao;
     private $idturno;
-    private $turno;
-    
+
+
     /*Metodos get e set que trazem o conteudo da variável privada desejada*/
     function __construct() {
 
     }
-
-    function getIdTurno() {
-        return $this->idturno;
+    
+    function getIdrestricaoDataHorario() {
+        return $this->idrestricaoDataHorario;
     }
 
-    function getTurno() {
-        return $this->turno;
+    function getDataRestricao() {
+        return $this->dataRestricao;
+    }
+
+    function getJustificativaRestricao() {
+        return $this->justificativaRestricao;
+    }
+
+    function getIdturno() {
+        return $this->idturno;
     }
 
 }
