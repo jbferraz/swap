@@ -1,7 +1,7 @@
 <?php
 session_start();
-define('BASE_URL', 'http://swap-edu-br.umbler.net');
-//define('BASE_URL', 'http://localhost/swap');
+//define('BASE_URL', 'http://swap-edu-br.umbler.net');
+define('BASE_URL', 'http://localhost/swap');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -51,6 +51,7 @@ define('BASE_URL', 'http://swap-edu-br.umbler.net');
                     <a class="mdl-navigation__link" href="">Cronogramas</a>
                     <a class="mdl-navigation__link" href="">Parâmetros</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/restricaoDataHorarioCadastro.php">Restrição Data/Turno</a>
+                    <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/restricaoDataHorarioListar.php">Restrição Data/Turno Lista</a>
                     <a class="mdl-navigation__link" href="">Cadastros</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/turnoCadastro.php">Turno</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/turnoListar.php">Lista Turno</a>

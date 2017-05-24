@@ -13,7 +13,7 @@
  */
 include_once("../class/turno.php");
 
-class turnoDAO extends database{
+class turnoDAO extends database {
 
     //put your code here
     public function __construct() {
@@ -74,6 +74,24 @@ class turnoDAO extends database{
         }
         $t = $this->deleteDB($sql, $params);
         return $t;
+    }
+
+    public function getById($id) {
+
+        $objVo = new turno( );
+
+        $sql = sprintf('select * from turno where idturno = "%s"', $id
+        );
+
+        $resultado = mysql_query($sql);
+
+        while ($rs = mysql_fetch_array($resultado)) {
+
+            $objVo->setId_cliente(stripslashes($rs['turno']));
+            
+            $return = clone $objVo;
+        }
+        return $return;
     }
 
 }
