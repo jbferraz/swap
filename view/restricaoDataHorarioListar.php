@@ -20,7 +20,7 @@ include "../template/header.php";
             <thead>
                 <tr>
                     <th class="mdl-data-table__cell--non-numeric">Data</th>
-                    <th class="mdl-data-table__cell--non-numeric">Justufucativa</th>
+                    <th class="mdl-data-table__cell--non-numeric">Justificativa</th>
                     <th class="mdl-data-table__cell--non-numeric">Turno</th>
                 </tr>
             </thead>
@@ -35,9 +35,16 @@ include "../template/header.php";
                 $arr = $restricaoDataHorarioDAO->load();
 
                 foreach ($arr as $value => $row) {
+                    $turnoDAO = new turnoDAO();
+                    $fields="*";
+                    $add= "where idturno=". $row->getIdturno();
+                    $arr2 = $turnoDAO->load($fields, $add);
+                    foreach ($arr2 as $value2 => $row2){
+                        
+                    }
                     echo "<tr><td>" . strtoupper(utf8_decode($row->getDataRestricao())) . "</td>"
                     . "<td>" . strtoupper(utf8_decode($row->getJustificativaRestricao())) . "</td>"
-                    . "<td>" . strtoupper(utf8_decode($row->getIdturno())) . "</td></tr>";
+                    . "<td>" . strtoupper(utf8_decode($row2->getTurno())) . "</td></tr>";
                 }
                 ?>
             </tbody>

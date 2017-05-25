@@ -76,22 +76,4 @@ class turnoDAO extends database {
         return $t;
     }
 
-    public function getById($id) {
-
-        $objVo = new turno( );
-
-        $sql = sprintf('select * from turno where idturno = "%s"', $id
-        );
-
-        $resultado = mysql_query($sql);
-
-        while ($rs = mysql_fetch_array($resultado)) {
-
-            $objVo->setId_cliente(stripslashes($rs['turno']));
-            
-            $return = clone $objVo;
-        }
-        return $return;
-    }
-
 }
