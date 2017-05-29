@@ -7,13 +7,13 @@
  */
 
 /**
- * Description of turnoDAO
+ * Description of professorCursoMinistraDAO
  *
  * @author jairb
  */
-include_once("../class/turno.php");
+include_once("../class/professorCursoMinistra.php");
 
-class turnoDAO extends database{
+class professorCursoMinistraDAO extends database{
 
     //put your code here
     public function __construct() {
@@ -38,8 +38,8 @@ class turnoDAO extends database{
         if (strlen($add) > 0) {
             $add = " " . $add;
         }
-        $sql = "SELECT $fields FROM turno$add";
-        return $this->selectDB($sql, null, 'turno');
+        $sql = "SELECT $fields FROM professorCursoMinistra$add";
+        return $this->selectDB($sql, null, 'professorCursoMinistra');
     }
 
     public function insert($fields, $params = null) {
@@ -48,7 +48,7 @@ class turnoDAO extends database{
             $numparams .= ",?";
         }
         $numparams = substr($numparams, 1);
-        $sql = "INSERT INTO turno ($fields) VALUES ($numparams)";
+        $sql = "INSERT INTO professorCursoMinistra ($fields) VALUES ($numparams)";
         $t = $this->insertDB($sql, $params);
         return $t;
     }
@@ -59,7 +59,7 @@ class turnoDAO extends database{
             $fields_T .= ", $fields[$i] = ?";
         }
         $fields_T = substr($fields_T, 2);
-        $sql = "UPDATE turno SET $fields_T";
+        $sql = "UPDATE professorCursoMinistra SET $fields_T";
         if (isset($where)) {
             $sql .= " WHERE $where";
         }
@@ -68,7 +68,7 @@ class turnoDAO extends database{
     }
 
     public function delete($where = null, $params = null) {
-        $sql = "DELETE FROM turno";
+        $sql = "DELETE FROM professorCursoMinistra";
         if (isset($where)) {
             $sql .= " WHERE $where";
         }
