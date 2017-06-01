@@ -7,13 +7,13 @@
  */
 
 /**
- * Description of professorCursoMinistraDAO
+ * Description of professorRestricaoDataHorarioDAO
  *
  * @author jairb
  */
-include_once("../class/professorCursoMinistra.php");
+include_once("../class/professorRestricaoDataHorario.php");
 
-class professorCursoMinistraDAO extends database{
+class professorRestricaoDataHorarioDAO extends database{
 
     //put your code here
     public function __construct() {
@@ -38,8 +38,8 @@ class professorCursoMinistraDAO extends database{
         if (strlen($add) > 0) {
             $add = " " . $add;
         }
-        $sql = "SELECT $fields FROM professorCursoMinistra$add";
-        return $this->selectDB($sql, null, 'professorCursoMinistra');
+        $sql = "SELECT $fields FROM professorRestricaoDataHorario$add";
+        return $this->selectDB($sql, null, 'professorRestricaoDataHorario');
     }
 
     public function insert($fields, $params = null) {
@@ -48,7 +48,7 @@ class professorCursoMinistraDAO extends database{
             $numparams .= ",?";
         }
         $numparams = substr($numparams, 1);
-        $sql = "INSERT INTO professorCursoMinistra ($fields) VALUES ($numparams)";
+        $sql = "INSERT INTO professorRestricaoDataHorario ($fields) VALUES ($numparams)";
         $t = $this->insertDB($sql, $params);
         return $t;
     }
@@ -59,7 +59,7 @@ class professorCursoMinistraDAO extends database{
             $fields_T .= ", $fields[$i] = ?";
         }
         $fields_T = substr($fields_T, 2);
-        $sql = "UPDATE professorCursoMinistra SET $fields_T";
+        $sql = "UPDATE professorRestricaoDataHorario SET $fields_T";
         if (isset($where)) {
             $sql .= " WHERE $where";
         }
@@ -68,7 +68,7 @@ class professorCursoMinistraDAO extends database{
     }
 
     public function delete($where = null, $params = null) {
-        $sql = "DELETE FROM professorCursoMinistra";
+        $sql = "DELETE FROM professorRestricaoDataHorario";
         if (isset($where)) {
             $sql .= " WHERE $where";
         }

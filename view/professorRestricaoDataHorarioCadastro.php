@@ -17,10 +17,10 @@ include "../template/header.php";
             <div class="mdl-cell mdl-cell--6-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
             <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--6-col">
                 <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">Professor/Curso Ministra</h2>
+                    <h2 class="mdl-card__title-text">Professor Restrição Data/Turno</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
-                    <form name="Professor/Curso Ministra" action="../action/professorCursoMinistraInsert.php" method="POST" enctype="multipart/form-data">
+                    <form name="Professor Restrição Data/Turno" action="../action/professorRestricaoDataHorarioInsert.php" method="POST" enctype="multipart/form-data">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <select class="mdl-textfield__input" aria-label="ngSelected demo" required="required" name="idprofessor" id="idprofessor">
                                 <option value=""></option>
@@ -42,24 +42,25 @@ include "../template/header.php";
                             <label class="mdl-textfield__label" for="idprofessor">Professor</label><br/>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <select class="mdl-textfield__input" aria-label="ngSelected demo" required="required" name="idcurso" id="idcurso">
+                            <input class="mdl-textfield__input" type="date" required="required" name="dataRestricao" id="dataRestricao">
+                            <label class="mdl-textfield__label" for="dataRestricao">Data Restrição</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <select class="mdl-textfield__input" aria-label="ngSelected demo" required="required" name="idturno" id="idturno">
                                 <option value=""></option>
                                 <?php
                                 require_once ("../includes/conexao.inc.php");
-                                include_once ("../dao/cursoDAO.php");
+                                include_once ("../dao/turnoDAO.php");
 
-                                $cursoDAO = new cursoDAO();
-                                $fields = "*";
-                                $add = "order by nomeCurso";
-                                $arr = $cursoDAO->load($fields, $add);
+                                $turnoDAO = new turnoDAO();
+                                $arr = $turnoDAO->load();
 
                                 foreach ($arr as $value => $row) {
-                                    echo "<option id='" . idcurso . "' value='" . $row->getIdcurso() . "'>" . $row->getNomeCurso() . "</option>";
+                                    echo "<option id='" . idturno . "' value=" . $row->getIdTurno() . ">" . $row->getTurno() . "</option>";
                                 }
                                 ?>
-                                <!--<option ID="pais_IdPais" value="1">ARGENTINA</option>--> 
                             </select>
-                            <label class="mdl-textfield__label" for="idcurso">Curso</label><br/>
+                            <label class="mdl-textfield__label" for="idturno">Turno</label><br/>
                         </div>
                         </br>
                         <input type="submit" name="acao" value="Salvar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>

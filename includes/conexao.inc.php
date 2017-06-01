@@ -107,7 +107,7 @@ abstract class database{
 		self::__destruct();
 		return $rs;
     }
-	
+    
 	/*Método delete que excluí valores do banco de dados retorna o número de linhas afetadas*/
 	public function deleteDB($sql,$params=null){
 		$query=$this->connect()->prepare($sql);

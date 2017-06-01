@@ -52,7 +52,9 @@ define('BASE_URL', 'http://swap-edu-br.umbler.net');
                     <a class="mdl-navigation__link" href="">Parâmetros</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/restricaoDataHorarioCadastro.php">Restrição Data/Turno</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/restricaoDataHorarioListar.php">Restrição Data/Turno Lista</a>
+                    <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/professorCadastro.php">Professor</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/professorCursoMinistraCadastro.php">Professor/Curso Ministra</a>
+                    <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/professorRestricaoDataHorarioCadastro.php">Professor Restrição Data/Turno</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/turnoCadastro.php">Turno</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/turnoListar.php">Lista Turno</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/paisCadastro.php">Pais</a>
@@ -62,7 +64,6 @@ define('BASE_URL', 'http://swap-edu-br.umbler.net');
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/andarCadastro.php">Andar</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/tipoSalaCadastro.php">Tipo Sala</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/salaCadastro.php">Sala</a>
-                    <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/professorCadastro.php">Professor</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/cursoCadastro.php">Curso</a>
                 </nav>
             </div>
