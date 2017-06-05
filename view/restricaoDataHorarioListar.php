@@ -30,16 +30,18 @@ include "../template/header.php";
                 require_once ("../includes/conexao.inc.php");
                 include_once ("../dao/restricaoDataHorarioDAO.php");
                 include_once ("../dao/turnoDAO.php");
-                
+
                 $restricaoDataHorarioDAO = new restricaoDataHorarioDAO();
-                $arr = $restricaoDataHorarioDAO->load();
+                $fields = "*";
+                $add = "order by dataRestricao";
+                $arr = $restricaoDataHorarioDAO->load($fields, $add);
 
                 foreach ($arr as $value => $row) {
                     $turnoDAO = new turnoDAO();
-                    $fields="*";
-                    $add= "where idturno=". $row->getIdturno();
-                    $arr2 = $turnoDAO->load($fields, $add);
-                    foreach ($arr2 as $value2 => $row2){
+                    $fieldsT = "*";
+                    $addT = "where idturno=" . $row->getIdturno();
+                    $arr2 = $turnoDAO->load($fieldsT, $addT);
+                    foreach ($arr2 as $value2 => $row2) {
                         
                     }
                     echo "<tr><td>" . strtoupper(utf8_decode($row->getDataRestricao())) . "</td>"
