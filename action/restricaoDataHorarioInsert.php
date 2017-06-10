@@ -26,4 +26,5 @@ $idturno = strtoupper(utf8_decode($_POST['idturno']));
 $fields = "dataRestricao,justificativaRestricao,idturno";
 $params = array("$dataRestricao","$justificativaRestricao","$idturno");
 $rs = $restricaoDataHorarioDAO->insert($fields,$params);
-var_dump($rs);
+//var_dump($rs);
+header("location: ../view/restricaoDataHorarioCadastro.php");

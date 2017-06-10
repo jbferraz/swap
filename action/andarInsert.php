@@ -25,4 +25,5 @@ $predio_idpredio = strtoupper(utf8_decode($_POST['predio_idpredio']));
 $fields = "numAndarPredio,predio_idpredio";
 $params = array("$numAndarPredio","$predio_idpredio");
 $rs = $andarDAO->insert($fields,$params);
-var_dump($rs);
+//var_dump($rs);
+header("location: ../view/andarCadastro.php");

@@ -22,4 +22,5 @@ $idturno = $_POST['idturno'];
 $fields = "idprofessor,dataRestricao,idturno";
 $params = array($idprofessor, $dataRestricao, $idturno);
 $rs=$professorRestricaoDataHorarioDAO->insert($fields, $params);
-var_dump($rs);
+//var_dump($rs);
+header("location: ../view/professorRestricaoDataHorarioCadastro.php");
