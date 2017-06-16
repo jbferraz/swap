@@ -32,18 +32,18 @@ include "../template/header.php";
                                 $fields = "*";
                                 $add = "where status='1' order by nomeProfessor";
                                 $arr = $professorDAO->load($fields, $add);
-                                
+
                                 $profSelecionado = "";
                                 $idProf = 0;
                                 if (isset($_POST["idprofessor"]))
-                                    $idProf=$_POST["idprofessor"];
+                                    $idProf = $_POST["idprofessor"];
 
                                 foreach ($arr as $value => $row) {
-                                    if ($idProf==$row->getIdprofessor())
-                                        $profSelecionado="selected";
-                                    else 
-                                        $profSelecionado="";
-                                    echo "<option ".$profSelecionado." id='" . idprofessor . "' value='" . $row->getIdprofessor() . "'>" . $row->getNomeProfessor() . "</option>";
+                                    if ($idProf == $row->getIdprofessor())
+                                        $profSelecionado = "selected";
+                                    else
+                                        $profSelecionado = "";
+                                    echo "<option " . $profSelecionado . " id='" . idprofessor . "' value='" . $row->getIdprofessor() . "'>" . $row->getNomeProfessor() . "</option>";
                                 }
                                 ?>
                                 <!--<option ID="pais_IdPais" value="1">ARGENTINA</option>--> 
@@ -52,52 +52,49 @@ include "../template/header.php";
                         </div>
                     </form> 
                     <?php
-                    
-                    if (isset($_REQUEST["profSelecionado"])){
-                    ?>
-                    <form name="Professor/Curso Ministra" action="../action/professorCursoMinistraInsert.php" method="POST" enctype="multipart/form-data">
-                        
-                        <input type="hidden" name="idprofessor" value="<?php echo $_POST["idprofessor"];?>" />
-                        
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    if (isset($_REQUEST["profSelecionado"])) {
+                        ?>
+                        <form name="Professor/Curso Ministra" action="../action/professorCursoMinistraInsert.php" method="POST" enctype="multipart/form-data">
+
+                            <input type="hidden" name="idprofessor" value="<?php echo $_POST["idprofessor"]; ?>" />
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                 <?php
                                 require_once ("../includes/conexao.inc.php");
                                 include_once ("../dao/cursoDAO.php");
-                                 include_once ("../dao/professorCursoMinistraDAO.php");
+                                include_once ("../dao/professorCursoMinistraDAO.php");
 
                                 $cursoDAO = new cursoDAO();
                                 $fields = "*";
                                 $add = "order by nomeCurso";
                                 $arr = $cursoDAO->load($fields, $add);
-                                
+
                                 $professorCursoMinistraDAO = new professorCursoMinistraDAO();
                                 $fieldsPC = "*";
-                                $addPC = "where idprofessor=".$_POST["idprofessor"];
+                                $addPC = "where idprofessor=" . $_POST["idprofessor"];
                                 $arrPC = $professorCursoMinistraDAO->load($fieldsPC, $addPC);
-                                
 
                                 foreach ($arr as $value => $row) {
-                                    $checado="";
+                                    $checado = "";
                                     foreach ($arrPC as $PC) {
-                                        if ($PC->getIdcurso()==$row->getIdcurso())
-                                            $checado="checked";
+                                        if ($PC->getIdcurso() == $row->getIdcurso())
+                                            $checado = "checked";
                                     }
-                                    
-                                    echo "<br><input ".$checado." class='mdl-checkbox__input' type='checkbox' name='".  $row->getIdcurso() . "' id='". $row->getIdcurso() ."'>". $row->getNomeCurso();
+
+                                    echo "<br><input " . $checado . " class='mdl-checkbox__input' type='checkbox' name='" . $row->getIdcurso() . "' id='" . $row->getIdcurso() . "'>" . $row->getNomeCurso();
                                 }
                                 ?>
-                        </div>
-                        </br>
-                        <input type="submit" name="acao" value="Salvar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>
-                        <input type="reset" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>
-                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="<?php echo BASE_URL; ?>/index.php" id="cancelar">
-                            Cancelar
-                        </a>
-                    </form>
-                    <?php                        
-                    }
-                    
-                    ?>
+                            </div>
+                            </br>
+                            <input type="submit" name="acao" value="Salvar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>
+                            <input type="reset" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>
+                            <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="<?php echo BASE_URL; ?>/index.php" id="cancelar">
+                                Cancelar
+                            </a>
+                        </form>
+    <?php
+}
+?>
                 </div>
             </div>
         </div>

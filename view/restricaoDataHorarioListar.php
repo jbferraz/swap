@@ -44,7 +44,7 @@ include "../template/header.php";
                     foreach ($arr2 as $value2 => $row2) {
                         
                     }
-                    echo "<tr><td>" . strtoupper(utf8_decode($row->getDataRestricao())) . "</td>"
+                    echo "<tr><td>" . date('d/m/Y', strtotime($row->getDataRestricao())) . "</td>"
                     . "<td>" . strtoupper(utf8_decode($row->getJustificativaRestricao())) . "</td>"
                     . "<td>" . strtoupper(utf8_decode($row2->getTurno())) . "</td></tr>";
                 }

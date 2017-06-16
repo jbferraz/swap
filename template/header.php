@@ -51,6 +51,7 @@ define('BASE_URL', 'http://swap-edu-br.umbler.net');
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/index.php">Página Inicial</a>
                     <a class="mdl-navigation__link" href="">Cronogramas</a>
                     <a class="mdl-navigation__link" href="">Parâmetros</a>
+                    <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/datasCronogramaTurmaListar.php">Datas Cronograma Turma</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/restricaoDataHorarioCadastro.php">Restrição Data/Turno</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/restricaoDataHorarioListar.php">Restrição Data/Turno Lista</a>
                     <a class="mdl-navigation__link" href="<?php echo BASE_URL; ?>/view/professorCadastro.php">Professor</a>
