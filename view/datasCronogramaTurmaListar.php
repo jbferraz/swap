@@ -19,7 +19,9 @@ include "../template/header.php";
         <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
             <thead>
                 <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Núm. Aula</th>
                     <th class="mdl-data-table__cell--non-numeric">Data</th>
+                    <th class="mdl-data-table__cell--non-numeric">Dia Sem.</th>
                     <th class="mdl-data-table__cell--non-numeric">Unidade Curricular</th>
                     <th class="mdl-data-table__cell--non-numeric">CH</th>
                     <th class="mdl-data-table__cell--non-numeric">Prof.</th>
@@ -54,10 +56,9 @@ include "../template/header.php";
                     $dataInicioModulo = $rowCT->getDataInicioModulo();
                     $idturma = $rowCT->getIdturma();
                     $idmoduloCurso = $rowCT->getIdmoduloCurso();
-                    echo date('d/m/Y', strtotime($dataInicioModulo)) . "<br>";
-                    echo date('d/m/Y', strtotime('+1 days', strtotime($dataInicioModulo))) . "<br>";
-
-                    echo ($diasemana_numero = date('w', strtotime($dataInicioModulo)) + 1) . "<br>";
+//                    echo date('d/m/Y', strtotime($dataInicioModulo)) . "<br>";
+//                    echo date('d/m/Y', strtotime('+1 days', strtotime($dataInicioModulo))) . "<br>";
+//                    echo ($diasemana_numero = date('w', strtotime($dataInicioModulo)) + 1) . "<br>";
 
                     $moduloCursoDAO = new moduloCursoDAO();
                     $fieldsMC = "*";
@@ -117,22 +118,27 @@ include "../template/header.php";
                     }
                 }
                 $qtAulaModulo = (int) ($chMC / $horasAula);
+                $contWhile = $qtAulaModulo;
+                $contAulas = 0;
                 $i = 0;
                 $data = $dataInicioModulo;
-                while ($i <= $qtAulaModulo) {
-                    if ($i==0){
-                        $i = $i + 1;
-                    }else{
-                        $data = date('d/m/Y', strtotime('+'.$i.' days', strtotime($dataInicioModulo)));
-                        $i = $i + 1;
+                setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+                date_default_timezone_set('America/Sao_Paulo');
+                while ($i < $contWhile || $contAulas <= $qtAulaModulo) {
+                    $diaSemanaNum = date('w', strtotime('+' . $i . ' days', strtotime($data)) + 1);
+                    if ($diaSemanaNum == 0 || $diaSemanaNum == 7) {
+                        $contWhile = $contWhile + 2;
+                    } else {
+                        $contAulas = $contAulas + 1;
                     }
-
-                    echo "<tr><td>" . strtoupper(utf8_decode(date('d/m/Y', strtotime($data)))) . "</td>"
+                    echo "<tr><td>" . ($i + 1) . "</td>"
+                    . "<td>" . date('d/m/Y', strtotime('+' . $i . ' days', strtotime($data))) . "</td>"
+                    . "<td>" . utf8_encode(strftime('%A', strtotime('+' . $i . ' days', strtotime($data)))) . "</td>"
                     . "<td>" . strtoupper(utf8_decode("")) . "</td>"
                     . "<td>" . strtoupper(utf8_decode("")) . "</td>"
                     . "<td>" . strtoupper(utf8_decode("")) . "</td>"
                     . "<td>" . strtoupper(utf8_decode("")) . "</td></tr>";
-                    
+                    $i = $i + 1;
                 }
                 ?>
             </tbody>
