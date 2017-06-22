@@ -30,7 +30,7 @@ include "../template/header.php";
                 require_once ("../includes/conexao.inc.php");
                 include_once ("../dao/restricaoDataHorarioDAO.php");
                 include_once ("../dao/turnoDAO.php");
-
+                
                 $restricaoDataHorarioDAO = new restricaoDataHorarioDAO();
                 $fields = "*";
                 $add = "order by dataRestricao";

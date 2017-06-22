@@ -43,6 +43,7 @@ include "../template/header.php";
                 include_once ("../dao/planoCursoModuloCursoDAO.php");
                 include_once ("../dao/unidadeCurricularDAO.php");
                 include_once ("../dao/restricaoDataHorarioDAO.php");
+                include_once ("../dao/datasCronogramaTurmaDAO.php");
 
                 $chMC = 0;
                 $horasAula = 0;
@@ -109,12 +110,13 @@ include "../template/header.php";
                             $fieldsADS = "*";
                             $addADS = "where idperiodoAula=" . $idperiodoAula;
                             $arrADS = $aulaDiaSemanaDAO->load($fieldsADS, $addADS);
-                            foreach ($arrADS as $keyADS => $rowADS) {
-                                $qtAulaSemana = $qtAulaSemana + 1;
-                            }
+//                            foreach ($arrADS as $keyADS => $rowADS) {
+//                                $qtAulaSemana = $qtAulaSemana + 1;
+//                            }
                         }
                     }
                 }
+                
                 $qtAulaModulo = (int) ($chMC / $horasAula);
                 $contWhile = $qtAulaModulo;
                 $contAulas = 0;
@@ -123,48 +125,55 @@ include "../template/header.php";
                 setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
                 date_default_timezone_set('America/Sao_Paulo');
 
-                while ($i <= $contWhile || $contAulas <= $qtAulaModulo) {
+                $restricaoDataHorarioDAO = new restricaoDataHorarioDAO();
+                $arrRDH = $restricaoDataHorarioDAO->load();
+
+                while ($i <= $contWhile && $contAulas <= $qtAulaModulo) {
                     $diaSemanaNum = date('w', strtotime('+' . $i . ' days', strtotime($data))) + 1;
                     $dataView = date('Y-m-d', strtotime('+' . $i . ' days', strtotime($data)));
-                    $unCurricular = "";
-                    $chUC = "";
-                    $profUC = "";
-                    $salaUC = "";
+                    $unCurricular = "-";
+                    $chUC = "-";
+                    $profUC = "-";
+                    $salaUC = "-";
 
-//                    $aulaDiaSemanaDAO = new aulaDiaSemanaDAO();
-//                    $fieldsADS = "*";
-//                    $addADS = "where idperiodoAula=" . $idperiodoAula;
-//                    $arrADS = $aulaDiaSemanaDAO->load($fieldsADS, $addADS);
-//                    foreach ($arrADS as $keyADS => $rowADS) {
-//                        $iddiaSemana = $rowADS->getIddiaSemana();
-//                        if ($diaSemanaNum == $iddiaSemana) {
-//                            $contAulas = $contAulas + 1;
-//                            $chUC = $horasAula;
-//                        } else {
-//                            $contWhile = $contWhile + 1;
-//                        }
-//                    }
-
-                    if ($diaSemanaNum == 0 || $diaSemanaNum == 7) {
-                        $contWhile = $contWhile + 1;
-                    } else {
-                        $contAulas = $contAulas + 1;
-                        $chUC = $horasAula;
-                    }
-
-                    $restricaoDataHorarioDAO = new restricaoDataHorarioDAO();
-                    $arrRDH = $restricaoDataHorarioDAO->load();
                     foreach ($arrRDH as $keyRDH => $rowRDH) {
                         $dataRestricao = $rowRDH->getDataRestricao();
                         $idTurnoR = $rowRDH->getIdturno();
                         if ($dataView == $dataRestricao && ($idTurnoR == $idturno || $idTurnoR == 4)) {
                             $unCurricular = $rowRDH->getJustificativaRestricao();
-                            $chUC = "";
-                            $profUC = "";
-                            $salaUC = "";
+                            $diaSemanaNum = 1;
+                        }
+                    }
+
+                    foreach ($arrADS as $keyADS => $rowADS) {
+                        $iddiaSemana = $rowADS->getIddiaSemana();
+                        if ($diaSemanaNum == $iddiaSemana) {
+                            $unCurricular = "Aula normal: " . $contAulas; //ajustar com a UC correta
+                            $chUC = $horasAula;
+                            $profUC = "Professor ?";
+
+//                            $datasCronogramaTurmaDAO = new datasCronogramaTurmaDAO();
+//                            $fieldsDCT = "*";
+//                            $addDCT = "where data=".$dataView;
+//                            $arrDCT = $datasCronogramaTurmaDAO->load();
+//                            foreach ($arrDCT as $keyDCT => $rowDCT) {
+//                                $profDCT=$rowDCT->getIdprofessor();
+//                                $profUC = $profDCT;
+//                            }
+                            
+                            $salaUC = "Sala ?";
+                            $contAulas = $contAulas + 1;
+                        } else {
                             $contWhile = $contWhile + 1;
                         }
                     }
+
+//                    if ($diaSemanaNum == 1 || $diaSemanaNum == 7) {
+//                        $contWhile = $contWhile + 1;
+//                    } else {
+//                        $contAulas = $contAulas + 1;
+//                        $chUC = $horasAula;
+//                    }
 
                     echo "<tr><td>" . ($i + 1) . "</td>"
                     . "<td>" . date('d/m/Y', strtotime('+' . $i . ' days', strtotime($data))) . "</td>"
