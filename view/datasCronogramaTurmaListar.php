@@ -56,9 +56,6 @@ include "../template/header.php";
                     $dataInicioModulo = $rowCT->getDataInicioModulo();
                     $idturma = $rowCT->getIdturma();
                     $idmoduloCurso = $rowCT->getIdmoduloCurso();
-//                    echo date('d/m/Y', strtotime($dataInicioModulo)) . "<br>";
-//                    echo date('d/m/Y', strtotime('+1 days', strtotime($dataInicioModulo))) . "<br>";
-//                    echo ($diasemana_numero = date('w', strtotime($dataInicioModulo)) + 1) . "<br>";
 
                     $moduloCursoDAO = new moduloCursoDAO();
                     $fieldsMC = "*";
@@ -127,33 +124,55 @@ include "../template/header.php";
                 date_default_timezone_set('America/Sao_Paulo');
 
                 while ($i <= $contWhile || $contAulas <= $qtAulaModulo) {
-                    $diaSemanaNum = date('w', strtotime('+' . $i . ' days', strtotime($data)) + 1);
-                    $dataView= date('Y-m-d', strtotime('+' . $i . ' days', strtotime($data)));
+                    $diaSemanaNum = date('w', strtotime('+' . $i . ' days', strtotime($data))) + 1;
+                    $dataView = date('Y-m-d', strtotime('+' . $i . ' days', strtotime($data)));
                     $unCurricular = "";
-                    if ($diaSemanaNum == 0 || $diaSemanaNum == 7) {
-                        $contWhile = $contWhile + 2;
-                    } else {
-                        $contAulas = $contAulas + 1;
+                    $chUC = "";
+                    $profUC = "";
+                    $salaUC = "";
+
+                    $aulaDiaSemanaDAO = new aulaDiaSemanaDAO();
+                    $fieldsADS = "*";
+                    $addADS = "where idperiodoAula=" . $idperiodoAula;
+                    $arrADS = $aulaDiaSemanaDAO->load($fieldsADS, $addADS);
+                    foreach ($arrADS as $keyADS => $rowADS) {
+                        $iddiaSemana = $rowADS->getIddiaSemana();
+                        if ($diaSemanaNum == $iddiaSemana) {
+                            $contAulas = $contAulas + 1;
+                            $chUC = $horasAula;
+                        } else {
+                            $contWhile = $contWhile + 1;
+                        }
                     }
+
+//                    if ($diaSemanaNum == 0 || $diaSemanaNum == 7) {
+//                        $contWhile = $contWhile + 1;
+//                    } else {
+//                        $contAulas = $contAulas + 1;
+//                        $chUC = $horasAula;
+//                    }
 
                     $restricaoDataHorarioDAO = new restricaoDataHorarioDAO();
                     $arrRDH = $restricaoDataHorarioDAO->load();
                     foreach ($arrRDH as $keyRDH => $rowRDH) {
                         $dataRestricao = $rowRDH->getDataRestricao();
                         $idTurnoR = $rowRDH->getIdturno();
-                        if ($dataView==$dataRestricao &&($idTurnoR==$idturno || $idTurnoR==4)){
-                            $unCurricular=$rowRDH->getJustificativaRestricao()."<br>";
+                        if ($dataView == $dataRestricao && ($idTurnoR == $idturno || $idTurnoR == 4)) {
+                            $unCurricular = $rowRDH->getJustificativaRestricao();
+                            $chUC = "";
+                            $profUC = "";
+                            $salaUC = "";
                             $contWhile = $contWhile + 1;
                         }
                     }
-                    
+
                     echo "<tr><td>" . ($i + 1) . "</td>"
                     . "<td>" . date('d/m/Y', strtotime('+' . $i . ' days', strtotime($data))) . "</td>"
                     . "<td>" . utf8_encode(strftime('%A', strtotime('+' . $i . ' days', strtotime($data)))) . "</td>"
                     . "<td>" . strtoupper(utf8_decode($unCurricular)) . "</td>"
-                    . "<td>" . strtoupper(utf8_decode("")) . "</td>"
-                    . "<td>" . strtoupper(utf8_decode("")) . "</td>"
-                    . "<td>" . strtoupper(utf8_decode("")) . "</td></tr>";
+                    . "<td>" . strtoupper(utf8_decode($chUC)) . "</td>"
+                    . "<td>" . strtoupper(utf8_decode($profUC)) . "</td>"
+                    . "<td>" . strtoupper(utf8_decode($salaUC)) . "</td></tr>";
                     $i = $i + 1;
                 }
                 ?>
