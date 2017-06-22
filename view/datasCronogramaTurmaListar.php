@@ -105,6 +105,7 @@ include "../template/header.php";
                             $arrHA = $horariosAulaDAO->load($fieldsHA, $addHA);
                             foreach ($arrHA as $keyHA => $rowHA) {
                                 $horasAula = $rowHA->getHorasAula();
+                                $idturno = $rowHA->getIdturno();
                             }
 
                             $aulaDiaSemanaDAO = new aulaDiaSemanaDAO();
@@ -124,17 +125,32 @@ include "../template/header.php";
                 $data = $dataInicioModulo;
                 setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
                 date_default_timezone_set('America/Sao_Paulo');
-                while ($i < $contWhile || $contAulas <= $qtAulaModulo) {
+
+                while ($i <= $contWhile || $contAulas <= $qtAulaModulo) {
                     $diaSemanaNum = date('w', strtotime('+' . $i . ' days', strtotime($data)) + 1);
+                    $dataView= date('Y-m-d', strtotime('+' . $i . ' days', strtotime($data)));
+                    $unCurricular = "";
                     if ($diaSemanaNum == 0 || $diaSemanaNum == 7) {
                         $contWhile = $contWhile + 2;
                     } else {
                         $contAulas = $contAulas + 1;
                     }
+
+                    $restricaoDataHorarioDAO = new restricaoDataHorarioDAO();
+                    $arrRDH = $restricaoDataHorarioDAO->load();
+                    foreach ($arrRDH as $keyRDH => $rowRDH) {
+                        $dataRestricao = $rowRDH->getDataRestricao();
+                        $idTurnoR = $rowRDH->getIdturno();
+                        if ($dataView==$dataRestricao &&($idTurnoR==$idturno || $idTurnoR==4)){
+                            $unCurricular=$rowRDH->getJustificativaRestricao()."<br>";
+                            $contWhile = $contWhile + 1;
+                        }
+                    }
+                    
                     echo "<tr><td>" . ($i + 1) . "</td>"
                     . "<td>" . date('d/m/Y', strtotime('+' . $i . ' days', strtotime($data))) . "</td>"
                     . "<td>" . utf8_encode(strftime('%A', strtotime('+' . $i . ' days', strtotime($data)))) . "</td>"
-                    . "<td>" . strtoupper(utf8_decode("")) . "</td>"
+                    . "<td>" . strtoupper(utf8_decode($unCurricular)) . "</td>"
                     . "<td>" . strtoupper(utf8_decode("")) . "</td>"
                     . "<td>" . strtoupper(utf8_decode("")) . "</td>"
                     . "<td>" . strtoupper(utf8_decode("")) . "</td></tr>";
