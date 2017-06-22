@@ -131,26 +131,26 @@ include "../template/header.php";
                     $profUC = "";
                     $salaUC = "";
 
-                    $aulaDiaSemanaDAO = new aulaDiaSemanaDAO();
-                    $fieldsADS = "*";
-                    $addADS = "where idperiodoAula=" . $idperiodoAula;
-                    $arrADS = $aulaDiaSemanaDAO->load($fieldsADS, $addADS);
-                    foreach ($arrADS as $keyADS => $rowADS) {
-                        $iddiaSemana = $rowADS->getIddiaSemana();
-                        if ($diaSemanaNum == $iddiaSemana) {
-                            $contAulas = $contAulas + 1;
-                            $chUC = $horasAula;
-                        } else {
-                            $contWhile = $contWhile + 1;
-                        }
-                    }
-
-//                    if ($diaSemanaNum == 0 || $diaSemanaNum == 7) {
-//                        $contWhile = $contWhile + 1;
-//                    } else {
-//                        $contAulas = $contAulas + 1;
-//                        $chUC = $horasAula;
+//                    $aulaDiaSemanaDAO = new aulaDiaSemanaDAO();
+//                    $fieldsADS = "*";
+//                    $addADS = "where idperiodoAula=" . $idperiodoAula;
+//                    $arrADS = $aulaDiaSemanaDAO->load($fieldsADS, $addADS);
+//                    foreach ($arrADS as $keyADS => $rowADS) {
+//                        $iddiaSemana = $rowADS->getIddiaSemana();
+//                        if ($diaSemanaNum == $iddiaSemana) {
+//                            $contAulas = $contAulas + 1;
+//                            $chUC = $horasAula;
+//                        } else {
+//                            $contWhile = $contWhile + 1;
+//                        }
 //                    }
+
+                    if ($diaSemanaNum == 0 || $diaSemanaNum == 7) {
+                        $contWhile = $contWhile + 1;
+                    } else {
+                        $contAulas = $contAulas + 1;
+                        $chUC = $horasAula;
+                    }
 
                     $restricaoDataHorarioDAO = new restricaoDataHorarioDAO();
                     $arrRDH = $restricaoDataHorarioDAO->load();
